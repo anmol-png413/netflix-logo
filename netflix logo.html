@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Logo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #111;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .netflix-logo {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            display: flex;
+        }
+
+        .netflix-logo span {
+            position: relative;
+            width: 30px;
+            height: 100%;
+            margin: 0 2px;
+            background: #db0000;
+            border-radius: 2px;
+            box-shadow: 0 0 25px rgba(219, 0, 0, 0.3);
+            animation: animate 2s infinite;
+        }
+
+        .netflix-logo span:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .netflix-logo span:nth-child(2) {
+            background: #db0000;
+            animation-delay: 0.6s;
+        }
+
+        .netflix-logo span:nth-child(3) {
+            background: #db0000;
+            animation-delay: 0.9s;
+        }
+
+        .netflix-logo span:nth-child(4) {
+            background: #db0000;
+            animation-delay: 1.2s;
+        }
+
+        .netflix-logo span:nth-child(5) {
+            background: #db0000;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(1.5);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        .netflix-text {
+            color: #e50914;
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+        }
+
+        @media (max-width: 500px) {
+            .netflix-logo {
+                width: 200px;
+                height: 100px;
+            }
+            
+            .netflix-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- Netflix Symbol (Red Rectangles Animation) -->
+        <div class="netflix-logo">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Netflix Text -->
+        <div class="netflix-text">Netflix</div>
+    </div>
+    
+    <script>
+        // Add some interactive effects
+        const logoSpans = document.querySelectorAll('.netflix-logo span');
+        
+        logoSpans.forEach(span => {
+            span.addEventListener('mouseover', () => {
+                span.style.transform = 'scaleY(1.8)';
+            });
+            
+            span.addEventListener('mouseout', () => {
+                span.style.transform = 'scaleY(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+
